@@ -15,6 +15,31 @@ public class ArraysAreEqual {
      * @return true if the values of a are equal to the values of b.
      */
     public boolean equal(int[] a, int[] b){
-        return false;
+        if (a.length != b.length) {
+            return false;
+        }
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+    public static void main(String[] args) {
+        ArraysAreEqual arrayComparator = new ArraysAreEqual();
+
+    
+        int[] arr1 = {1, 2, 3, 4};
+        int[] arr2 = {1, 2, 3, 4};
+        System.out.println(arrayComparator.equal(arr1, arr2));  //true
+
+        int[] arr3 = {1, 2, 3, 4};
+        int[] arr4 = {1, 2, 3, 5};
+        System.out.println(arrayComparator.equal(arr3, arr4));  //flase
+        int[] arr5 = {1, 2, 3, 4};
+        int[] arr6 = {1, 2, 3, 4, 5};
+        System.out.println(arrayComparator.equal(arr5, arr6));  //flase
     }
 }
+
